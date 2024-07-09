@@ -67,7 +67,10 @@
 		</main>
 
         <?php include 'components/scripts.html' ?>
-		<script src="assets/js/login/login.js"></script>
+
+
+		<script src="assets/js/login/login_funcoes.js"></script>
+		<script src="assets/js/login/login_vue.js"></script>
 		
 
 	</body>

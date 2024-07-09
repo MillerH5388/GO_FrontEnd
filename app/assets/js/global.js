@@ -1,4 +1,4 @@
-function avisar_erro(message)
+function avisar_erro(message = 'Não foi possível realizar a ação')
 {
     Notiflix.Loading.remove()
     Notiflix.Notify.failure(message);
