@@ -1,0 +1,117 @@
+<nav class="navbar navbar-top fixed-top navbar-expand" id="navbarDefault">
+    <div class="collapse navbar-collapse justify-content-between">
+        <div class="navbar-logo">
+            <button class="btn navbar-toggler navbar-toggler-humburger-icon hover-bg-transparent" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarVerticalCollapse"
+                aria-controls="navbarVerticalCollapse" aria-expanded="false" aria-label="Toggle Navigation"><span
+                    class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
+            <a class="navbar-brand me-1 me-sm-3" href="dashboard.php">
+                <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center"><img src="../assets/img/icons/logo.png" alt="phoenix"
+                            width="27" />
+                        <p class="logo-text ms-2 d-none d-sm-block">CashFlow</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <ul class="navbar-nav navbar-nav-icons flex-row">
+            <li class="nav-item">
+                <div class="theme-control-toggle fa-icon-wait px-2"><input
+                        class="form-check-input ms-0 theme-control-toggle-input" type="checkbox"
+                        data-theme-control="phoenixTheme" value="dark" id="themeControlToggle" /><label
+                        class="mb-0 theme-control-toggle-label theme-control-toggle-light"
+                        for="themeControlToggle"><span class="icon" data-feather="moon"></span></label><label
+                        class="mb-0 theme-control-toggle-label theme-control-toggle-dark" for="themeControlToggle"><span
+                            class="icon" data-feather="sun"></span></label></div>
+            </li>
+
+            <li class="nav-item dropdown"><a class="nav-link lh-1 pe-0" id="navbarDropdownUser" href="#!" role="button"
+                    data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
+                    <div class="avatar avatar-l ">
+                        <img class="rounded-circle " src="<?echo $_SESSION['imagem']?>" alt="" />
+                    </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end navbar-dropdown-caret py-0 dropdown-profile shadow border border-300"
+                    aria-labelledby="navbarDropdownUser">
+                    <div class="card position-relative border-0">
+                        <div class="card-body p-0">
+                            <div class="text-center pt-4 pb-3">
+                                <div class="avatar avatar-xl ">
+                                    <img class="rounded-circle " src="<?echo $_SESSION['imagem']?>" alt="" />
+                                </div>
+                                <h6 class="mt-2 text-black">
+                                    <?echo $_SESSION['nome']?>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="overflow-auto scrollbar">
+                            <ul class="nav d-flex flex-column mb-2 pb-1">
+                                <li class="nav-item"><a style="cursor: pointer;" class="nav-link px-3"
+                                        data-bs-toggle="modal" data-bs-target="#modal_perfil"><span
+                                            class="me-2 text-900"></span><span><i class="far fa-user"></i> &nbsp;
+                                            Perfil</span></a></li>
+                                <li class="nav-item"><a class="nav-link px-3" href="historico.php"><span
+                                            class="me-2 text-900"></span><i class="far fa-clock"></i> &nbsp;
+                                        Histórico</a></li>
+                            </ul>
+                        </div>
+                        <div class="card-footer p-0 border-top">
+                            <div class="px-3 mb-3 mt-3"> 
+                                <a class="btn btn-phoenix-secondary d-flex flex-center w-100" onclick="sair_da_plataforma()"> 
+                                    <span class="me-2" data-feather="log-out">
+                                    </span>Sair
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="modal fade" id="modal_perfil" tabindex="-1" aria-labelledby="verticallyCenteredModalLabel"
+    aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="verticallyCenteredModalLabel">Meus Dados</h5>
+                <button class="btn p-1" type="button" data-bs-dismiss="modal" aria-label="Close"><i
+                        class="fa fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+
+                <form method="POST" action="">
+
+                    <input type="hidden" name="acao" value="editar_perfil">
+                    <div>
+                        <div class="mb-2" style="text-align: center;">
+                            <div class="avatar avatar-4xl avatar-bordered me-4">
+                                <img id="imagem_perfil_editar" class="rounded-circle "
+                                    src="<?echo $_SESSION['imagem']?>" alt="">
+                                <input type="hidden" name="base64" id="base64_foto_perfil"
+                                    value="<?echo $_SESSION['imagem']?>">
+                            </div>
+                        </div>
+                        <input onchange="trocar_foto_perfil(this)" type="file" class="form-control" accept="image/*">
+                    </div>
+
+                    <div class="mt-2 mb-2">
+                        <label class="form-label p-0">Nome *</label>
+                        <input class="form-control" type="text" name="nome" placeholder="Digite aqui seu nome ..."
+                            required value="<?echo $_SESSION['nome']?>">
+                    </div>
+
+                    <button class="btn btn-primary" type="submit">Salvar Alterações</button>
+
+                </form>
+
+            </div>
+            <div class="modal-footer">
+
+                <button class="btn btn-outline-default" type="button" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
