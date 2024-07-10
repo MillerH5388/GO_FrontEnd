@@ -17,13 +17,12 @@
 
             <div class="row g-3 mb-3">
 
-                <div class="col-sm-6 col-md-4 col-xl-3 col-xxl-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <p class="mb-0">Teste</p>
-                        </div>
+                <div class="card h-100">
+                    <div class="card-body">
+                        <p class="mb-0">Teste</p>
                     </div>
                 </div>
+                
 
             </div>
 
@@ -35,6 +34,8 @@
 
 
         <?php include 'components/scripts.html' ?>
+        <script src="assets/js/home/home_vue.js"></script>
+        <script src="assets/js/home/home_vue2.js"></script>
         <script>
             iniciar_autenticacao()
         </script>

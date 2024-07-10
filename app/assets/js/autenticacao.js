@@ -17,7 +17,11 @@ async function iniciar_autenticacao()
     }
 
     Notiflix.Loading.remove();
+
+    if(!usuario.foto) usuario.foto = 'assets/img/foto_usuario_padrao.png'
     usuario_global = usuario
+    const event = new Event('go_authetication');
+    document.dispatchEvent(event);
 
 }
 

@@ -1,5 +1,5 @@
 const VueLoginData = {
-    date(){
+    data(){
         return{
             login: '',
             senha: ''

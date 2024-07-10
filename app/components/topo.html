@@ -1,4 +1,4 @@
-<nav class="navbar navbar-top fixed-top navbar-expand" id="navbarDefault">
+<nav class="navbar navbar-top fixed-top navbar-expand" id="component_topo">
     <div class="collapse navbar-collapse justify-content-between">
         <div class="navbar-logo">
             <button class="btn navbar-toggler navbar-toggler-humburger-icon hover-bg-transparent" type="button"
@@ -7,29 +7,97 @@
                     class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
             <a class="navbar-brand me-1 me-sm-3" href="dashboard.php">
                 <div class="d-flex align-items-center">
-                    <div class="d-flex align-items-center"><img src="../assets/img/icons/logo.png" alt="phoenix"
+                    <div class="d-flex align-items-center"><img src="assets/img/icons/logo.png" alt="phoenix"
                             width="27" />
-                        <p class="logo-text ms-2 d-none d-sm-block">CashFlow</p>
+                        <p class="logo-text ms-2 d-none d-sm-block">GO</p>
                     </div>
                 </div>
             </a>
         </div>
 
         <ul class="navbar-nav navbar-nav-icons flex-row">
+
             <li class="nav-item">
-                <div class="theme-control-toggle fa-icon-wait px-2"><input
-                        class="form-check-input ms-0 theme-control-toggle-input" type="checkbox"
-                        data-theme-control="phoenixTheme" value="dark" id="themeControlToggle" /><label
-                        class="mb-0 theme-control-toggle-label theme-control-toggle-light"
-                        for="themeControlToggle"><span class="icon" data-feather="moon"></span></label><label
-                        class="mb-0 theme-control-toggle-label theme-control-toggle-dark" for="themeControlToggle"><span
-                            class="icon" data-feather="sun"></span></label></div>
+                <div class="theme-control-toggle fa-icon-wait px-2">
+                    <input class="form-check-input ms-0 theme-control-toggle-input" type="checkbox"
+                        data-theme-control="phoenixTheme" value="dark" id="themeControlToggle" />
+                    <label class="mb-0 theme-control-toggle-label theme-control-toggle-light" for="themeControlToggle">
+                        <span class="icon" data-feather="moon"></span>
+                    </label>
+                    <label class="mb-0 theme-control-toggle-label theme-control-toggle-dark" for="themeControlToggle">
+                        <span class="icon" data-feather="sun"></span>
+                    </label>
+                </div>
             </li>
 
-            <li class="nav-item dropdown"><a class="nav-link lh-1 pe-0" id="navbarDropdownUser" href="#!" role="button"
-                    data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown">
+
+                <a class="nav-link" href="#" style="min-width: 2.25rem" role="button" data-bs-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" data-bs-auto-close="outside">
+                    <span class="d-block" style="height:20px;width:20px;">
+                        <span data-feather="bell" style="height:20px;width:20px;"></span>
+                    </span>
+                </a>
+                
+                <div class="dropdown-menu dropdown-menu-end notification-dropdown-menu py-0 shadow border navbar-dropdown-caret"
+                    id="navbarDropdownNotfication" aria-labelledby="navbarDropdownNotfication">
+                    <div class="card position-relative border-0">
+
+                        <div class="card-header p-2">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="text-body-emphasis mb-0">Notificações</h5><button
+                                    class="btn btn-link p-0 fs-9 fw-normal" type="button">Marcar tudo como visto</button>
+                            </div>
+                        </div>
+
+                        <div class="card-body p-0">
+                            <div class="scrollbar-overlay" style="max-height: 27rem;">
+
+                                <div class="px-2 px-sm-3 py-3 notification-card position-relative read border-bottom">
+                                    <div class="d-flex align-items-center justify-content-between position-relative">
+                                        <div class="d-flex">
+                                            <div class="avatar avatar-m status-online me-3"><img class="rounded-circle"
+                                                    src="assets/img/team/40x40/30.webp" alt="" /></div>
+                                            <div class="flex-1 me-sm-3">
+                                                <h4 class="fs-9 text-body-emphasis">Jessie Samson</h4>
+                                                <p class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"><span
+                                                        class='me-1 fs-10'>💬</span>Mentioned you in a comment.<span
+                                                        class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10">10m</span>
+                                                </p>
+                                                <p class="text-body-secondary fs-9 mb-0"><span
+                                                        class="me-1 fas fa-clock"></span><span class="fw-bold">10:41 AM
+                                                    </span>August 7,2021</p>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown notification-dropdown"><button
+                                                class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none"
+                                                type="button" data-bs-toggle="dropdown" data-boundary="window"
+                                                aria-haspopup="true" aria-expanded="false"
+                                                data-bs-reference="parent"><span
+                                                    class="fas fa-ellipsis-h fs-10 text-body"></span></button>
+                                            <div class="dropdown-menu py-2"><a class="dropdown-item" href="#!">Mark as
+                                                    unread</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card-footer p-0 border-top border-translucent border-0">
+                            <div class="my-2 text-center fw-bold fs-10 text-body-tertiary text-opactity-85">
+                                <a class="fw-bolder" href="pages/notifications.html">Notification history</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link lh-1" id="navbarDropdownUser" href="#!" role="button" data-bs-toggle="dropdown"
+                    data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
                     <div class="avatar avatar-l ">
-                        <img class="rounded-circle " src="<?echo $_SESSION['imagem']?>" alt="" />
+                        <img class="rounded-circle " :src="usuario.foto"
+                            @error="usuario.foto = 'assets/img/foto_usuario_padrao.png'" alt="" />
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end navbar-dropdown-caret py-0 dropdown-profile shadow border border-300"
@@ -38,10 +106,11 @@
                         <div class="card-body p-0">
                             <div class="text-center pt-4 pb-3">
                                 <div class="avatar avatar-xl ">
-                                    <img class="rounded-circle " src="<?echo $_SESSION['imagem']?>" alt="" />
+                                    <img class="rounded-circle " :src="usuario.foto"
+                                        @error="usuario.foto = 'assets/img/foto_usuario_padrao.png'" alt="" />
                                 </div>
                                 <h6 class="mt-2 text-black">
-                                    <?echo $_SESSION['nome']?>
+                                    {{usuario.nome}}
                                 </h6>
                             </div>
                         </div>
@@ -57,8 +126,9 @@
                             </ul>
                         </div>
                         <div class="card-footer p-0 border-top">
-                            <div class="px-3 mb-3 mt-3"> 
-                                <a class="btn btn-phoenix-secondary d-flex flex-center w-100" onclick="sair_da_plataforma()"> 
+                            <div class="px-3 mb-3 mt-3">
+                                <a class="btn btn-phoenix-secondary d-flex flex-center w-100"
+                                    onclick="sair_da_plataforma()">
                                     <span class="me-2" data-feather="log-out">
                                     </span>Sair
                                 </a>
@@ -70,48 +140,3 @@
         </ul>
     </div>
 </nav>
-
-<div class="modal fade" id="modal_perfil" tabindex="-1" aria-labelledby="verticallyCenteredModalLabel"
-    aria-hidden="true" style="display: none;">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="verticallyCenteredModalLabel">Meus Dados</h5>
-                <button class="btn p-1" type="button" data-bs-dismiss="modal" aria-label="Close"><i
-                        class="fa fa-times"></i></button>
-            </div>
-            <div class="modal-body">
-
-                <form method="POST" action="">
-
-                    <input type="hidden" name="acao" value="editar_perfil">
-                    <div>
-                        <div class="mb-2" style="text-align: center;">
-                            <div class="avatar avatar-4xl avatar-bordered me-4">
-                                <img id="imagem_perfil_editar" class="rounded-circle "
-                                    src="<?echo $_SESSION['imagem']?>" alt="">
-                                <input type="hidden" name="base64" id="base64_foto_perfil"
-                                    value="<?echo $_SESSION['imagem']?>">
-                            </div>
-                        </div>
-                        <input onchange="trocar_foto_perfil(this)" type="file" class="form-control" accept="image/*">
-                    </div>
-
-                    <div class="mt-2 mb-2">
-                        <label class="form-label p-0">Nome *</label>
-                        <input class="form-control" type="text" name="nome" placeholder="Digite aqui seu nome ..."
-                            required value="<?echo $_SESSION['nome']?>">
-                    </div>
-
-                    <button class="btn btn-primary" type="submit">Salvar Alterações</button>
-
-                </form>
-
-            </div>
-            <div class="modal-footer">
-
-                <button class="btn btn-outline-default" type="button" data-bs-dismiss="modal">Fechar</button>
-            </div>
-        </div>
-    </div>
-</div>
